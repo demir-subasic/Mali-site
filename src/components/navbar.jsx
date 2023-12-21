@@ -9,7 +9,6 @@ import { FaSearch } from "react-icons/fa";
 const Navbar = () => {
     const [isDropVisible, setIsDropVisible] = useState(false);
 
-
     const handleMouseEnter = () => {
         setIsDropVisible(true);
     }
@@ -17,6 +16,7 @@ const Navbar = () => {
     const handleMouseLeave = () => {
         setIsDropVisible(false)
     }
+    
     return (
         <div className="navbar">
             <div className="upper">
