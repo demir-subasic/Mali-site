@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import malikidslogo from "../assets/malikidslogo.png";
 import "./navbar.scss";
 import { FaUserLarge } from "react-icons/fa6";
@@ -7,6 +7,16 @@ import { FaPhone } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 
 const Navbar = () => {
+    const [isDropVisible, setIsDropVisible] = useState(false);
+
+
+    const handleMouseEnter = () => {
+        setIsDropVisible(true);
+    }
+
+    const handleMouseLeave = () => {
+        setIsDropVisible(false)
+    }
     return (
         <div className="navbar">
             <div className="upper">
@@ -47,13 +57,76 @@ const Navbar = () => {
                     </div>
                 </div>
                 <ul>
-                    <li>Na akciji</li>
-                    <li>Oprema za bebe</li>
-                    <li>Za nju</li>
-                    <li>Za njega</li>
-                    <li>Za veliku decu</li>
-                    <li>Igracke</li>
-                    <li>Ostalo</li>
+                    <li className="dropdown"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    >Oprema za bebu
+                        {isDropVisible && (
+                            <div className="dropdown-content">
+                                <li className="drop-li">Igracke za ucenje</li>
+                                <li className="drop-li">Decje knjige</li>
+                                <li className="drop-li">Bojanke i olovke</li>
+                                <li className="drop-li">Sprtska oprema</li>
+                            </div>
+                        )}
+                    </li>
+                    <li className="dropdown"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    >Za nju
+                        {isDropVisible && (
+                            <div className="dropdown-content">
+                                <li className="drop-li">Puzzle i slagalice</li>
+                                <li className="drop-li">Kreativni materijali</li>
+                                <li className="drop-li">Vrtić ili kućna bašta</li>
+                            </div>
+                        )}
+                    </li>
+                    <li className="dropdown"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    >Za njega
+                        {isDropVisible && (
+                            <div className="dropdown-content">
+                                 <li className="drop-li">Puzzle i slagalice</li>
+                                <li className="drop-li">Kreativni materijali</li>
+                                <li className="drop-li">Vrtić ili kućna bašta</li>
+                            </div>
+                        )}
+                    </li>
+                    <li className="dropdown"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    >Igracke
+                        {isDropVisible && (
+                            <div className="dropdown-content">
+                                <li className="drop-li">Puzzle i slagalice</li>
+                                <li className="drop-li">Kreativni materijali</li>
+                                <li className="drop-li">Vrtić ili kućna bašta</li>
+                                <li className="drop-li">Igracke za ucenje</li>
+                                <li className="drop-li">Decje knjige</li>
+                                <li className="drop-li">Bojanke i olovke</li>
+                                <li className="drop-li">Sprtska oprema</li>
+                            </div>
+                        )}
+                    </li>
+                    <li className="dropdown"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    >Ostalo
+                        {isDropVisible && (
+                            <div className="dropdown-content">
+                                <li className="drop-li">Edukativne igre na računaru ili tabletu</li>
+                                <li className="drop-li">Vrtić ili kućna bašta</li>
+                                <li className="drop-li">Narukvice</li>
+                                <li className="drop-li">Lampe</li>
+                                <li className="drop-li">Narukvice</li>
+                                <li className="drop-li">Lampe</li>
+                            </div>
+                        )}
+                    </li>
+                    <li className="dropdown">Na akciji</li>
+                    <li className="dropdown">Kontakt</li>
                 </ul>
             </div>
         </div>
