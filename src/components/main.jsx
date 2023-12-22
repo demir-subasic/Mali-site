@@ -1,9 +1,12 @@
 import React from 'react'
 import './main.scss'
+import Item from './mini-components/Item'
 
 const Main = () => {
   return (
-    <div className='main'>main</div>
+    <div className='main'>
+        <Item />
+    </div>
   )
 }
 
